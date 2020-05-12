@@ -34,12 +34,12 @@ import { TemplateDrivenModule } from './components/template-driven/template-driv
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FooterComponent,
     NavComponent,
+    FooterComponent,
     ChildAComponent,
     ChildBComponent,
     HomeComponent,
+    AppComponent,
     ],
   imports: [
     BrowserModule,
