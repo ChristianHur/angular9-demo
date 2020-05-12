@@ -13,7 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 // import { FlightsComponent } from './components/flights/flights.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   {
     path: 'about',
     loadChildren: () => import('./components/about/about.module').then(m => m.AboutModule)
@@ -42,7 +42,6 @@ const routes: Routes = [
     path: 'flights',
     loadChildren: () => import('./components/flights/flights.module').then(m => m.FlightsModule)
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: '**',
     loadChildren: () => import('./components/notfound/notfound.module').then(m => m.NotfoundModule)
