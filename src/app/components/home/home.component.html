@@ -1,0 +1,19 @@
+<div class="title mb-4">
+    <h1>{{title}}</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-5">
+      <app-child-a [data]="data" ></app-child-a>
+    </div>
+
+    <div class="col-md-6 mb-5 ">
+      <app-child-b (messageFromChildB)="receivedFromB($event)"></app-child-b>
+    </div>
+
+    <div class="col-md-6 my-2">
+      <button type="button"  class="btn btn-lg btn-secondary" (click)="addPoints()">Add Parent Points</button>
+      <h3>Message from Child B</h3>
+      <h4 class="bg-secondary p-4 text-warning rounded">{{data.childB_message}}</h4>
+    </div>
+  </div>

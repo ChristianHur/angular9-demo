@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row mb-5">
+        <h1 class="text-left">Edit Flight Schedule</h1>
+        <div class="table-responsive border p-4 bg-light rounded">
+            <p class="text-left font-weight-bold">Active Flight Schedule</p>
+            <ng-container *ngIf="submitted">
+                <p class="text-center alert alert-success p-2 rounded">
+                    Successfully Added!
+                </p>
+            </ng-container>
+            <ng-container *ngIf="!submitted">
+                <form #f="ngForm" (ngSubmit)="handleSubmit(f)">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label>Id:</label>
+                            <input name="id" class="form-control" type="number" [(ngModel)]="flight.id" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Flight No:</label>
+                            <input name="flight_no" [style.textTransform]="'uppercase'" class="form-control" 
+                            [(ngModel)]="flight.flight_no"/>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label>Airline:</label>
+                            <input name="airline" style="text-transform:capitalize" class="form-control" 
+                            [(ngModel)]="flight.airline"/>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label>Trip Type:</label>
+                            <select name="trip_type" class="form-control" [(ngModel)]="flight.trip_type">
+                                <option>One Way</option>
+                                <option>Round Trip</option>
+                                <option value="Multi">Multiple Destinations</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Departure Airport:</label>
+                            <input name="departure_airport" [style.textTransform]="'uppercase'" class="form-control" 
+                            [(ngModel)]="flight.departure_airport"/>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Arrival Airport:</label>
+                            <input name="arrival_airport" [style.textTransform]="'uppercase'" class="form-control" 
+                            [(ngModel)]="flight.arrival_airport"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label>Departure Date:</label>
+                            <input type="date" name="departure_date" class="form-control" 
+                            [(ngModel)]="flight.departure_date"/>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Return Date:</label>
+                            <input type="date" name="return_date" class="form-control" 
+                            [(ngModel)]="flight.return_date"/>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-just-icon btn-lg">
+                        Submit
+                    </button>
+                </form>
+            </ng-container>
+        </div>
+    </div>
+</div>

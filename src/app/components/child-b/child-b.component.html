@@ -1,0 +1,11 @@
+<h2 class="card-title">Child B</h2>
+<div class=" h-100 rounded bg-warning">
+    <div class="card-body">
+        <p class="card-text">I am a child component, too!</p>
+        <textarea (keyup)="sendToParent()" [(ngModel)]="childb_message" class="form-control rounded-0"></textarea>
+        <button type="button" class="btn btn-md bg-success mt-2" (click)="sendToParent()">Send Message</button>
+    </div>  
+    <p class="border p-2 font-weight-bold" *ngFor="let user of users; index as i">
+        {{i+1}}. {{user.id}} - {{user.first_name + ' ' + user.last_name}} - {{user.title}} ({{user.email}})
+    </p>  
+</div>

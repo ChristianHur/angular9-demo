@@ -1,0 +1,52 @@
+<div class="row">
+  <h1 class="text-center">Flight Schedule</h1>
+  <div class="table-responsive rounded bg-light p-4 my-4">
+    <div class="mb-2">
+      <p class="font-weight-bold">Active Flight Schedule</p>
+      <ng-container *ngIf="submitted">
+        <p class="text-center alert alert-success p-2 rounded">
+          Successfully Deleted!
+        </p>
+      </ng-container>
+    </div>
+    <table class="table table-hover">
+      <thead class="table-borderless table-secondary">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Airline</th>
+          <th scope="col">Flight No.</th>
+          <th scope="col">Trip Type</th>
+          <th scope="col">Departure Airport</th>
+          <th scope="col">Arrival Airport</th>
+          <th scope="col">Departure Date</th>
+          <th scope="col">Return Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td scope="row">{{flight.id}}</td>
+          <td>{{flight.airline}}</td>
+          <td>{{flight.flight_no}}</td>
+          <td>{{flight.trip_type}}</td>
+          <td>{{flight.departure_airport}}</td>
+          <td>{{flight.arrival_airport}}</td>
+          <td>{{flight.departure_date}}</td>
+          <td>{{flight.return_date}}</td>
+          <td>
+            <a routerLink="../edit/{{flight.id}}" type="button" class="btn btn-success btn-sm text-white mr-2">Edit</a>
+            <button (click)="deleteOne(flight.id)" type="button" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="text-center alert alert-info p-2 rounded" *ngIf="count == 0">
+      No Data!
+    </p>
+
+    <button (click)="deleteAll()" type="button" class="btn btn-lg btn-danger ml-2">
+      Delete All
+    </button>
+  </div>
+</div>

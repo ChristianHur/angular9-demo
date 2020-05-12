@@ -1,0 +1,11 @@
+<h1 class="card-title">About My Sample App</h1>
+<div class=" h-100 rounded bg-light">
+    <div class="col-lg-12 p-4">
+        <span class="mx-2" *ngFor="let user of users">
+            <a [routerLink]="['/user',user.id]" type="button" class="btn btn-md btn-primary">
+                {{user.first_name}} {{user.last_name}}
+            </a>
+        </span>   
+    </div>
+</div>
+<router-outlet></router-outlet>
