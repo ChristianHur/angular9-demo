@@ -7,7 +7,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class NavComponent {
   navMenus = [
-    {"url":"/","text":"Home","active":true},
+    {"url":"/home","text":"Home","active":true},
     {"url":"/about","text":"About","active":false},
     {"url":"/contact","text":"Contact","active":false},
     {"url":"/register","text":"Register","active":false},
